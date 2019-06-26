@@ -97,7 +97,6 @@ namespace Pong
                     break;
             }
         }
-        //ball class
         public class ball
         {
             //velocity and position
@@ -115,7 +114,7 @@ namespace Pong
                     yvel = yvel * (-1);
                 }
             }
-           
+
             //Draw ball method
             public void drawball(Graphics g, int xpos, int ypos)
             {
@@ -123,7 +122,6 @@ namespace Pong
                 g.FillRectangle(ballbrush, xpos, ypos, 10, 10);
             }
         }
-
         //Draw paddle method
         public void DrawPaddles(Graphics g)
         {
@@ -235,21 +233,10 @@ namespace Pong
             Graphics g = e.Graphics;
             SolidBrush myBrush = new SolidBrush(Color.White);
             //dotted white line down the middle
-            g.FillRectangle(myBrush, (pbBackGround.Width / 2) - 10, 0, 10, 20);
-            g.FillRectangle(myBrush, (pbBackGround.Width / 2) - 10, 30, 10, 20);
-            g.FillRectangle(myBrush, (pbBackGround.Width / 2) - 10, 60, 10, 20);
-            g.FillRectangle(myBrush, (pbBackGround.Width / 2) - 10, 90, 10, 20);
-            g.FillRectangle(myBrush, (pbBackGround.Width / 2) - 10, 120, 10, 20);
-            g.FillRectangle(myBrush, (pbBackGround.Width / 2) - 10, 150, 10, 20);
-            g.FillRectangle(myBrush, (pbBackGround.Width / 2) - 10, 180, 10, 20);
-            g.FillRectangle(myBrush, (pbBackGround.Width / 2) - 10, 210, 10, 20);
-            g.FillRectangle(myBrush, (pbBackGround.Width / 2) - 10, 240, 10, 20);
-            g.FillRectangle(myBrush, (pbBackGround.Width / 2) - 10, 270, 10, 20);
-            g.FillRectangle(myBrush, (pbBackGround.Width / 2) - 10, 300, 10, 20);
-            g.FillRectangle(myBrush, (pbBackGround.Width / 2) - 10, 330, 10, 20);
-            g.FillRectangle(myBrush, (pbBackGround.Width / 2) - 10, 360, 10, 20);
-            g.FillRectangle(myBrush, (pbBackGround.Width / 2) - 10, 390, 10, 20);
-            g.FillRectangle(myBrush, (pbBackGround.Width / 2) - 10, 420, 10, 20);
+            for (int i= 1; i<pbBackGround.Height; i=i+30)
+            {
+                g.FillRectangle(myBrush, (pbBackGround.Width / 2) - 10, i, 10, 20);
+            }
             //ball and paddle
             GameBall.drawball(g, GameBall.xpos, GameBall.ypos);
             DrawPaddles(g);
